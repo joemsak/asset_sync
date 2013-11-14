@@ -173,7 +173,7 @@ module AssetSync
         if gzipped_size < original_size
           percentage = ((gzipped_size.to_f/original_size.to_f)*100).round(2)
           file.merge!({
-                        :key => f,
+                        :key => "#{f}.gz",
                         :body => File.open(gzipped),
                         :content_encoding => 'gzip'
                       })
